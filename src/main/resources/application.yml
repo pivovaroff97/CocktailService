@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cocktail_recipe_db?useSSL=false&amp;serverTimezone=UTC
+    username: postgres
+    password: calm
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
