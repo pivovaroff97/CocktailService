@@ -8,4 +8,5 @@ import java.util.List;
 
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
+    List<Recipe> findAllById(Iterable<Long> ids);
 }

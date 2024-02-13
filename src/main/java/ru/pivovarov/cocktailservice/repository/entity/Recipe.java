@@ -1,5 +1,6 @@
 package ru.pivovarov.cocktailservice.repository.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,7 +20,9 @@ public class Recipe {
     private String label;
     @Column
     private double calories;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    @OneToMany(mappedBy = "recipe",
+            cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Ingredient> ingredients;
 
     //    private List<String> tags; TODO add search by tags

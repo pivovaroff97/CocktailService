@@ -1,5 +1,6 @@
 package ru.pivovarov.cocktailservice.repository.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,8 +14,9 @@ public class Ingredient {
     @Column
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "recipe_id")
+    @JsonBackReference
     private Recipe recipe;
     @Column
     private String text;
